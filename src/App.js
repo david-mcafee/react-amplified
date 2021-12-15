@@ -1,20 +1,20 @@
 import "./App.css";
 
 import { Authenticator } from "@aws-amplify/ui-react";
-import { API, Auth } from "aws-amplify";
+import { API } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 
 export default function App() {
   async function getBooks() {
-    const apiName = "api6a984c52";
-    const path = "/books";
+    const apiName = "apiapi6a984c52";
+    const path = "/items";
     const myInit = {
       // OPTIONAL
-      headers: {
-        Authorization: `Bearer ${(await Auth.currentSession())
-          .getIdToken()
-          .getJwtToken()}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${(await Auth.currentSession())
+      //     .getIdToken()
+      //     .getJwtToken()}`,
+      // },
       response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
       // queryStringParameters: {
       //   // OPTIONAL

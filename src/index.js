@@ -7,7 +7,31 @@ import reportWebVitals from "./reportWebVitals";
 import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 
+import { Auth } from "aws-amplify";
+
 Amplify.configure(awsExports);
+
+Amplify.configure({
+  ...awsExports,
+  API: {
+    endpoints: [
+      {
+        name: "api6a984c52",
+        endpoint: "https://5atiyiml41.execute-api.us-west-2.amazonaws.com/dev",
+        custom_header: async () => {
+          // return { Authorization: "token" };
+          // Alternatively, with Cognito User Pools use this:
+          // return { Authorization: `Bearer ${(await Auth.currentSession()).getAccessToken().getJwtToken()}` }
+          return {
+            Authorization: `Bearer ${(await Auth.currentSession())
+              .getIdToken()
+              .getJwtToken()}`,
+          };
+        },
+      },
+    ],
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
