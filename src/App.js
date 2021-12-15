@@ -36,9 +36,11 @@ export default function App() {
 
   async function createItem() {
     const apiName = "apiapi6a984c52";
-    const path = "/items";
+    const path = "/items/1";
     const myInit = {
-      body: {}, // replace this with attributes you need
+      body: {
+        Test: "Hello",
+      }, // replace this with attributes you need
       // headers: {}, // OPTIONAL
     };
 

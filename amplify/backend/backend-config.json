@@ -4,6 +4,25 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "reactamplifiedf661da85": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "dynamodf206939",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
     }
   },
   "api": {
@@ -13,7 +32,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "reactamplifiedd7842634",
+          "resourceName": "reactamplifiedf661da85",
           "attributes": [
             "Name",
             "Arn"
@@ -46,6 +65,12 @@
           "EMAIL"
         ]
       }
+    }
+  },
+  "storage": {
+    "dynamodf206939": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

@@ -3,7 +3,7 @@
   "paths": {
     "/items": {
       "name": "/items",
-      "lambdaFunction": "reactamplifiedd7842634",
+      "lambdaFunction": "reactamplifiedf661da85",
       "permissions": {
         "setting": "open"
       }

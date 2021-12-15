@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamodf206939",
+  "tableName": "dynamodf206939",
+  "partitionKey": {
+    "fieldName": "Test",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
