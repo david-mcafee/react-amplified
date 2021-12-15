@@ -5,7 +5,7 @@ import { API } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 
 export default function App() {
-  async function getBooks() {
+  async function getItems() {
     const apiName = "apiapi6a984c52";
     const path = "/items";
     const myInit = {
@@ -32,7 +32,25 @@ export default function App() {
       });
   }
 
-  getBooks();
+  getItems();
+
+  async function createItem() {
+    const apiName = "apiapi6a984c52";
+    const path = "/items";
+    const myInit = {
+      body: {}, // replace this with attributes you need
+      // headers: {}, // OPTIONAL
+    };
+
+    return await API.post(apiName, path, myInit)
+      .then((response) => {
+        // Add your code here
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }
 
   return (
     <Authenticator>
@@ -40,6 +58,10 @@ export default function App() {
         <main>
           <h1>Hello {user.username}</h1>
           <button onClick={signOut}>Sign out</button>
+          <ul />
+          <button onClick={() => getItems()}>REFRESH ITEMS</button>
+          <ul />
+          <button onClick={() => createItem()}>CREATE ITEM</button>
         </main>
       )}
     </Authenticator>
