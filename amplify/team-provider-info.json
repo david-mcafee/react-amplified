@@ -17,6 +17,9 @@
           "deploymentBucketName": "amplify-reactamplified-dev-95708-deployment",
           "s3Key": "amplify-builds/reactamplifiedd7842634-48665765474d77317269-build.zip"
         }
+      },
+      "auth": {
+        "reactamplified6cfa0f77": {}
       }
     }
   }
